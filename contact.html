@@ -4,39 +4,105 @@
   <meta charset="UTF-8">
   <title>Contact | Aesthetics By Simran Malra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
 
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #c06c84;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #444;
+    }
+
     form {
-      max-width: 700px;
+      max-width: 800px;
       margin: auto;
-    }
-
-    fieldset {
-      border: 1px solid #ddd;
-      padding: 15px;
-      margin-bottom: 20px;
-    }
-
-    legend {
-      font-weight: bold;
     }
 
     label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 15px;
+      font-weight: 500;
     }
 
-    input, textarea, button {
+    input, textarea {
       width: 100%;
-      padding: 8px;
-      margin-top: 5px;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    fieldset {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+    }
+
+    legend {
+      font-weight: bold;
+      padding: 0 10px;
+    }
+
+    /* ⭐ SERVICES GRID */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px 20px;
+      margin-top: 15px;
+    }
+
+    .services-grid label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    .services-grid input {
+      width: auto;
+      margin-top: 3px;
     }
 
     button {
-      background-color: #c06c84;
+      width: 100%;
+      padding: 14px;
+      background: #c06c84;
       color: white;
       border: none;
+      border-radius: 8px;
+      font-size: 16px;
       cursor: pointer;
     }
 
@@ -46,10 +112,19 @@
 
     .note {
       font-size: 14px;
-      color: #555;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      padding: 20px;
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -74,16 +149,13 @@
 
   <form action="https://formspree.io/f/xreezvbq" method="POST" onsubmit="return validateContact()">
 
-    <!-- ✅ THANK YOU REDIRECT -->
     <input type="hidden" name="_next" value="thank-you.html">
 
-    <!-- Name -->
     <label>
       Full Name *
       <input type="text" name="name" required>
     </label>
 
-    <!-- Phone / Email -->
     <label>
       Phone Number
       <input type="tel" id="phone" name="phone">
@@ -96,49 +168,32 @@
 
     <p class="note">* Please provide at least one: phone number or email.</p>
 
-    <!-- Services -->
     <fieldset>
       <legend>Query is related to (select one or more)</legend>
 
-      <label><input type="checkbox" class="service" value="None"> None</label>
-
-      <label><input type="checkbox" class="service" value="Customised Medi-Facials"> Customised Medi-Facials</label>
-      <label><input type="checkbox" class="service" value="Jet Peel Facial (Advanced Hydra)"> Jet Peel Facial (Advanced Hydra)</label>
-      <label><input type="checkbox" class="service" value="Hydrafacial"> Hydrafacial</label>
-      <label><input type="checkbox" class="service" value="Microdermabrasion"> Microdermabrasion</label>
-      <label><input type="checkbox" class="service" value="Vampire Facial"> Vampire Facial</label>
-      <label><input type="checkbox" class="service" value="Laser Treatments"> Laser Treatments</label>
-      <label><input type="checkbox" class="service" value="Microneedling"> Microneedling</label>
-      <label><input type="checkbox" class="service" value="Laser Hair Reduction (LHR)"> Laser Hair Reduction (LHR)</label>
-      <label><input type="checkbox" class="service" value="Electrolysis"> Electrolysis (Laser for White Hair)</label>
-      <label><input type="checkbox" class="service" value="HIFU"> Skin Tightening Treatment (HIFU)</label>
-      <label><input type="checkbox" class="service" value="Skin Tag Removal"> Skin Tag Removal</label>
-      <label><input type="checkbox" class="service" value="Mole Removal"> Mole Removal</label>
-      <label><input type="checkbox" class="service" value="Ear-Lobe Repair"> Ear-Lobe Repair</label>
-      <label><input type="checkbox" class="service" value="Wart Removal"> Wart Removal</label>
-      <label><input type="checkbox" class="service" value="Dermaplaning"> Dermaplaning</label>
-      <label><input type="checkbox" class="service" value="Pigmentation Treatment"> Pigmentation Treatment</label>
-      <label><input type="checkbox" class="service" value="Dark Circle Treatment"> Dark Circle Treatment</label>
-      <label><input type="checkbox" class="service" value="Full Body Polishing"> Full Body Polishing</label>
-      <label><input type="checkbox" class="service" value="Melasma Treatment"> Melasma Treatment</label>
-      <label><input type="checkbox" class="service" value="GFC Face"> GFC (for Face)</label>
-      <label><input type="checkbox" class="service" value="GFC Hair"> GFC (for Hair)</label>
-      <label><input type="checkbox" class="service" value="Xanthalasma Treatment"> Xanthalasma Treatment</label>
-      <label><input type="checkbox" class="service" value="Acne Scar Treatment"> Acne Scar Treatment</label>
-      <label><input type="checkbox" class="service" value="Anti-Aging Boosters"> Anti-Aging Boosters</label>
-      <label><input type="checkbox" class="service" value="Semi Permanent Make-up"> Semi Permanent Make-up</label>
-      <label><input type="checkbox" class="service" value="Microblading"> Microblading</label>
-      <label><input type="checkbox" class="service" value="Nano Shading"> Nano Shading</label>
-      <label><input type="checkbox" class="service" value="Lip Neutralisation"> Lip Neutralisation</label>
-      <label><input type="checkbox" class="service" value="Lip Tint"> Lip Tint</label>
-      <label><input type="checkbox" class="service" value="Eyelash Extension"> Eyelash Extension</label>
-      <label><input type="checkbox" class="service" value="Eyelash Lift"> Eyelash Lift</label>
-      <label><input type="checkbox" class="service" value="BB Glow Treatment"> BB Glow Treatment</label>
-      <label><input type="checkbox" class="service" value="Botox"> Botox</label>
-      <label><input type="checkbox" class="service" value="Fillers"> Fillers</label>
+      <div class="services-grid">
+        <label><input type="checkbox" class="service" value="None"> None</label>
+        <label><input type="checkbox" class="service" value="Customised Medi-Facials"> Customised Medi-Facials</label>
+        <label><input type="checkbox" class="service" value="Jet Peel Facial"> Jet Peel Facial</label>
+        <label><input type="checkbox" class="service" value="Hydrafacial"> Hydrafacial</label>
+        <label><input type="checkbox" class="service" value="Microdermabrasion"> Microdermabrasion</label>
+        <label><input type="checkbox" class="service" value="Vampire Facial"> Vampire Facial</label>
+        <label><input type="checkbox" class="service" value="Laser Treatments"> Laser Treatments</label>
+        <label><input type="checkbox" class="service" value="Microneedling"> Microneedling</label>
+        <label><input type="checkbox" class="service" value="Laser Hair Reduction"> Laser Hair Reduction</label>
+        <label><input type="checkbox" class="service" value="Electrolysis"> Electrolysis</label>
+        <label><input type="checkbox" class="service" value="HIFU"> Skin Tightening (HIFU)</label>
+        <label><input type="checkbox" class="service" value="Skin Tag Removal"> Skin Tag Removal</label>
+        <label><input type="checkbox" class="service" value="Mole Removal"> Mole Removal</label>
+        <label><input type="checkbox" class="service" value="Dermaplaning"> Dermaplaning</label>
+        <label><input type="checkbox" class="service" value="Pigmentation Treatment"> Pigmentation Treatment</label>
+        <label><input type="checkbox" class="service" value="Dark Circle Treatment"> Dark Circle Treatment</label>
+        <label><input type="checkbox" class="service" value="Anti-Aging"> Anti-Aging Treatments</label>
+        <label><input type="checkbox" class="service" value="Botox"> Botox</label>
+        <label><input type="checkbox" class="service" value="Fillers"> Fillers</label>
+      </div>
     </fieldset>
 
-    <!-- Message -->
     <label>
       Your Query / Message
       <textarea name="message" rows="6" maxlength="1000"

@@ -74,6 +74,9 @@
 
   <form action="https://formspree.io/f/xreezvbq" method="POST" onsubmit="return validateContact()">
 
+    <!-- ✅ THANK YOU REDIRECT -->
+    <input type="hidden" name="_next" value="thank-you.html">
+
     <!-- Name -->
     <label>
       Full Name *
@@ -133,13 +136,13 @@
       <label><input type="checkbox" class="service" value="BB Glow Treatment"> BB Glow Treatment</label>
       <label><input type="checkbox" class="service" value="Botox"> Botox</label>
       <label><input type="checkbox" class="service" value="Fillers"> Fillers</label>
-
     </fieldset>
 
     <!-- Message -->
     <label>
       Your Query / Message
-      <textarea name="message" rows="6" maxlength="1000" placeholder="Please describe your concern or question..."></textarea>
+      <textarea name="message" rows="6" maxlength="1000"
+        placeholder="Please describe your concern or question..."></textarea>
     </label>
 
     <button type="submit">Send Request</button>
@@ -156,7 +159,9 @@
 
   serviceCheckboxes.forEach(cb => {
     cb.addEventListener('change', () => {
-      const noneChecked = [...serviceCheckboxes].find(c => c.value === 'None' && c.checked);
+      const noneChecked = [...serviceCheckboxes].find(
+        c => c.value === 'None' && c.checked
+      );
 
       serviceCheckboxes.forEach(c => {
         if (noneChecked && c.value !== 'None') {

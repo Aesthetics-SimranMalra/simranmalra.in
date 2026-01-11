@@ -1,171 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Services | Aesthetics By Simran Malra</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Services | Aesthetics By Simran Malra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap');
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      margin: 0;
+    }
 
-:root{
-  --primary:#9b7c5b;
-  --dark:#1c1c1c;
-  --muted:#6f6f6f;
-  --bg:#faf8f6;
-}
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
 
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-  color:var(--dark);
-}
+    .services {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
 
-/* HEADER */
-header{
-  background:white;
-  padding:40px 8%;
-  border-bottom:1px solid #eee;
-}
-header h1{
-  font-family:'Playfair Display',serif;
-  font-size:34px;
-}
-nav{margin-top:20px}
-nav a{
-  text-decoration:none;
-  color:var(--dark);
-  margin-right:25px;
-}
-nav a:hover{color:var(--primary);}
+    .services h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
 
-/* SERVICES GRID */
-section{
-  padding:80px 8%;
-}
-h2{
-  font-family:'Playfair Display',serif;
-  margin-bottom:40px;
-}
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
+    .service-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
 
-.card{
-  background:white;
-  padding:30px;
-  border-radius:18px;
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 20px 40px rgba(0,0,0,.05);
-  cursor:pointer;
-}
+    .service-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
 
-.card h3{
-  font-family:'Playfair Display',serif;
-  font-size:22px;
-}
+    .service-card p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+    }
 
-/* HOVER INFO */
-.info{
-  position:absolute;
-  inset:0;
-  background:rgba(255,255,255,.97);
-  padding:30px;
-  opacity:0;
-  transition:.3s;
-}
-.card:hover .info{opacity:1}
-
-.info p{
-  font-size:14px;
-  color:var(--muted);
-  margin-bottom:12px;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:40px;
-  color:#777;
-  font-size:14px;
-}
-</style>
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #fff;
+      border-top: 1px solid #eee;
+      font-size: 14px;
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
-  <h1>Our Services</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <h1>Aesthetics By Simran Malra</h1>
 </header>
 
-<section>
-  <h2>Advanced Aesthetic Treatments</h2>
+<section class="services">
+  <h2>Our Services</h2>
 
-  <div class="grid">
+  <div class="service-grid">
 
-    <div class="card">
+    <!-- FACIALS & SKIN CARE -->
+    <div class="service-card">
+      <h3>Customised Medi-Facials</h3>
+      <p>Medical-grade facials tailored to your skin type and concerns such as acne, dullness, pigmentation, or aging.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Jet Peel Facial (Advanced Hydra)</h3>
+      <p>Deep cleansing and hydration using high-pressure infusion to refresh and revive tired skin.</p>
+    </div>
+
+    <div class="service-card">
       <h3>Hydrafacial</h3>
-      <div class="info">
-        <p>Deep cleansing, exfoliation and hydration for instantly glowing skin.</p>
-        <p>त्वचा की गहराई से सफाई, पोषण और तुरंत निखार के लिए।</p>
-      </div>
+      <p>Removes dead skin, unclogs pores, and hydrates the skin in one treatment with instant glow.</p>
     </div>
 
-    <div class="card">
-      <h3>Laser Hair Reduction</h3>
-      <div class="info">
-        <p>Safe, effective and long-term reduction of unwanted hair.</p>
-        <p>अनचाहे बालों को स्थायी रूप से कम करने की सुरक्षित प्रक्रिया।</p>
-      </div>
+    <div class="service-card">
+      <h3>Microdermabrasion</h3>
+      <p>Gentle exfoliation to improve skin texture, reduce fine lines, and brighten the complexion.</p>
     </div>
 
-    <div class="card">
-      <h3>Microneedling / GFC</h3>
-      <div class="info">
-        <p>Boosts collagen, improves scars and overall skin texture.</p>
-        <p>कोलेजन बढ़ाकर दाग-धब्बे और त्वचा की गुणवत्ता सुधारता है।</p>
-      </div>
+    <div class="service-card">
+      <h3>Vampire Facial</h3>
+      <p>Uses your own PRP to boost collagen, improve skin tone, and reduce fine lines naturally.</p>
     </div>
 
-    <div class="card">
-      <h3>Anti-Aging</h3>
-      <div class="info">
-        <p>Reduces fine lines and restores youthful skin firmness.</p>
-        <p>झुर्रियों को कम कर त्वचा को युवा बनाता है।</p>
-      </div>
+    <div class="service-card">
+      <h3>Microneedling</h3>
+      <p>Stimulates collagen production to reduce acne scars, fine lines, and uneven skin texture.</p>
     </div>
 
-    <div class="card">
-      <h3>Botox & Fillers</h3>
-      <div class="info">
-        <p>Subtle enhancements for wrinkles and volume loss.</p>
-        <p>झुर्रियों और खोई हुई वॉल्यूम के लिए सुरक्षित समाधान।</p>
-      </div>
+    <div class="service-card">
+      <h3>Dermaplaning</h3>
+      <p>Removes dead skin and peach fuzz for smoother, brighter skin and better product absorption.</p>
     </div>
 
-    <div class="card">
-      <h3>Pigmentation Treatments</h3>
-      <div class="info">
-        <p>Targets uneven skin tone and dark patches.</p>
-        <p>त्वचा की रंगत सुधारने और दाग-धब्बों के लिए।</p>
-      </div>
+    <!-- LASER & ADVANCED TREATMENTS -->
+    <div class="service-card">
+      <h3>Laser Hair Reduction (LHR)</h3>
+      <p>Safe and effective long-term hair reduction for face and body.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Electrolysis (White Hair Removal)</h3>
+      <p>Permanent solution for removing white or stubborn hair where laser is not effective.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Laser Treatments</h3>
+      <p>Advanced laser solutions for pigmentation, acne marks, pores, and skin rejuvenation.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Skin Tightening (HIFU)</h3>
+      <p>Non-surgical lifting and tightening of face and neck using focused ultrasound.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Q-Switch Laser</h3>
+      <p>Used for tattoo removal, freckles, uneven skin tone, carbon laser, and open pores.</p>
+    </div>
+
+    <!-- SKIN CONDITIONS -->
+    <div class="service-card">
+      <h3>Pigmentation Treatment</h3>
+      <p>Targets dark patches, sun damage, and uneven skin tone with customised protocols.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Melasma Treatment</h3>
+      <p>Specialised treatment plan to control and reduce stubborn melasma safely.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Dark Circle Treatment</h3>
+      <p>Improves under-eye pigmentation, hollowness, and tired appearance.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Acne Scar Treatment</h3>
+      <p>Combination therapies to reduce acne scars and improve overall skin texture.</p>
+    </div>
+
+    <!-- PROCEDURES -->
+    <div class="service-card">
+      <h3>Skin Tag Removal</h3>
+      <p>Quick and safe removal of unwanted skin tags.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Mole Removal</h3>
+      <p>Non-surgical removal of moles after proper evaluation.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Wart Removal</h3>
+      <p>Effective removal of warts with minimal discomfort.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Ear-Lobe Repair</h3>
+      <p>Correction of torn or stretched ear lobes.</p>
+    </div>
+
+    <!-- BODY & HAIR -->
+    <div class="service-card">
+      <h3>Full Body Polishing</h3>
+      <p>Exfoliation and nourishment treatment for smoother, glowing skin.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>GFC for Face</h3>
+      <p>Growth factor treatment to rejuvenate skin and improve texture.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>GFC for Hair</h3>
+      <p>Promotes hair growth and reduces hair fall using growth factors.</p>
+    </div>
+
+    <!-- AESTHETICS -->
+    <div class="service-card">
+      <h3>Anti-Aging Boosters</h3>
+      <p>Injectable treatments to improve skin hydration, firmness, and glow.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Botox</h3>
+      <p>Reduces fine lines and wrinkles for a refreshed, youthful appearance.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Fillers</h3>
+      <p>Adds volume and enhances facial features like lips, jawline, and cheeks.</p>
+    </div>
+
+    <!-- SEMI-PERMANENT MAKEUP -->
+    <div class="service-card">
+      <h3>Microblading</h3>
+      <p>Natural-looking eyebrow enhancement using semi-permanent strokes.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Nano Shading</h3>
+      <p>Soft powdered eyebrow look for fuller, defined brows.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Lip Neutralisation</h3>
+      <p>Corrects dark or uneven lip tone to restore natural colour.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Lip Tint</h3>
+      <p>Semi-permanent lip colour for naturally tinted lips.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Semi Permanent Make-up</h3>
+      <p>Long-lasting makeup solutions for brows, lips, and eyes.</p>
+    </div>
+
+    <!-- LASHES & GLOW -->
+    <div class="service-card">
+      <h3>Eyelash Extension</h3>
+      <p>Adds length and volume to lashes for a fuller look.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Eyelash Lift</h3>
+      <p>Enhances natural lashes by lifting and curling them.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>BB Glow Treatment</h3>
+      <p>Improves skin tone and gives a natural, radiant glow.</p>
     </div>
 
   </div>
 </section>
 
 <footer>
-  <p>All procedures are customised after consultation.</p>
+  <p>📞 Call / WhatsApp: +91 81081 08042</p>
 </footer>
 
 </body>

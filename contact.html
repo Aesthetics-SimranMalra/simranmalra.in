@@ -6,138 +6,175 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fafafa;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
+    body{
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:#f7f5f2;
+      margin:0;
+      color:#333;
     }
 
-    header {
-      background: #c06c84;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    header{
+      background:linear-gradient(135deg,#c06c84,#f67280);
+      color:#fff;
+      padding:24px 16px;
+      text-align:center;
     }
 
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: 500;
+    header h1{margin:0;font-size:32px;}
+
+    nav{
+      margin-top:10px;
     }
 
-    section {
-      max-width: 900px;
-      margin: 30px auto;
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    nav a{
+      color:#fff;
+      margin:0 12px;
+      text-decoration:none;
+      font-weight:500;
     }
 
-    h2 {
-      margin-top: 0;
-      color: #444;
+    section{
+      max-width:900px;
+      margin:30px auto;
+      background:#fff;
+      padding:28px;
+      border-radius:14px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
     }
 
-    form {
-      max-width: 800px;
-      margin: auto;
+    h2{
+      margin-top:0;
+      color:#444;
     }
 
-    label {
-      display: block;
-      margin-bottom: 15px;
-      font-weight: 500;
+    .contact-box p{
+      margin:8px 0;
+      font-size:15px;
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 6px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 15px;
+    .contact-box a{
+      color:#c06c84;
+      text-decoration:none;
+      font-weight:600;
     }
 
-    fieldset {
-      border: 1px solid #ddd;
-      padding: 20px;
-      margin-bottom: 25px;
-      border-radius: 8px;
+    .hall-image{
+      max-width:900px;
+      margin:25px auto;
     }
 
-    legend {
-      font-weight: bold;
-      padding: 0 10px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 12px 20px;
-      margin-top: 15px;
-    }
-
-    .services-grid label {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-weight: normal;
-      cursor: pointer;
-    }
-
-    .services-grid input {
-      width: auto;
-      margin-top: 3px;
-    }
-
-    button {
-      width: 100%;
-      padding: 14px;
-      background: #c06c84;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    .note {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 15px;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 14px;
-      color: #777;
-      padding: 20px;
-    }
-
-    /* IMAGE ADDITION */
-    .hall-image {
-      max-width: 900px;
-      margin: 25px auto;
-    }
     .hall-image img{
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      border-radius: 16px;
+      width:100%;
+      border-radius:18px;
       background:#f4efe9;
       padding:6px;
     }
 
+    .note{
+      font-size:14px;
+      color:#666;
+      margin-bottom:18px;
+    }
+
+    form{
+      max-width:800px;
+      margin:auto;
+    }
+
+    .type-select{
+      display:flex;
+      gap:16px;
+      margin-bottom:24px;
+    }
+
+    .type-select button{
+      flex:1;
+      padding:16px;
+      font-size:16px;
+      border-radius:12px;
+      border:2px solid #c06c84;
+      background:#fff;
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    .type-select button.active{
+      background:#c06c84;
+      color:#fff;
+    }
+
+    label{
+      display:block;
+      margin-bottom:16px;
+      font-weight:500;
+    }
+
+    input,textarea{
+      width:100%;
+      padding:12px;
+      margin-top:6px;
+      border-radius:8px;
+      border:1px solid #ccc;
+      font-size:15px;
+    }
+
+    fieldset{
+      border:1px solid #ddd;
+      padding:20px;
+      margin:24px 0;
+      border-radius:12px;
+    }
+
+    legend{
+      font-weight:600;
+      padding:0 10px;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:12px 20px;
+      margin-top:14px;
+    }
+
+    .services-grid label{
+      display:flex;
+      gap:10px;
+      font-weight:normal;
+      cursor:pointer;
+    }
+
+    .services-grid input{
+      width:auto;
+      margin-top:3px;
+    }
+
+    .send-btn{
+      width:100%;
+      padding:16px;
+      background:linear-gradient(135deg,#25D366,#1ebe5d);
+      color:#fff;
+      border:none;
+      border-radius:14px;
+      font-size:17px;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .send-btn:hover{
+      opacity:0.95;
+    }
+
+    footer{
+      text-align:center;
+      font-size:14px;
+      color:#777;
+      padding:24px 10px;
+    }
+
     @media(max-width:768px){
-      header h1{font-size:28px;}
+      header h1{font-size:26px;}
+      .type-select{flex-direction:column;}
     }
   </style>
 </head>
@@ -145,7 +182,7 @@
 <body>
 
 <header>
-  <h1>Book an Appointment</h1>
+  <h1>Contact & Appointments</h1>
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -154,44 +191,51 @@
   </nav>
 </header>
 
-<section>
-  <h2>Contact Details</h2>
-  <p><strong>Address:</strong> Barnala Road, near Bhuman Shah Chowk, Bhagat Singh Colony, Sirsa, Haryana 125055 </p>
+<section class="contact-box">
+  <h2>Clinic Details</h2>
+  <p><strong>Address:</strong> Barnala Road, near Bhuman Shah Chowk, Bhagat Singh Colony, Sirsa, Haryana 125055</p>
   <p><strong>Phone / WhatsApp:</strong> <a href="tel:+918108108042">+91 81081 08042</a></p>
 </section>
 
-<!-- HALL IMAGE -->
 <div class="hall-image">
   <img src="https://raw.githubusercontent.com/Aesthetics-SimranMalra/images/main/hall.jpeg" alt="Clinic Hall">
 </div>
 
 <section>
-  <h2>Appointment / Query Form</h2>
-  <p class="note">Please fill the form below. We’ll get back to you ASAP.</p>
+  <h2>Send Us a WhatsApp Message</h2>
+  <p class="note">
+    This form sends your message directly to our WhatsApp in a clean, well-formatted style.
+  </p>
 
-  <form action="https://formspree.io/f/xreezvbq" method="POST" onsubmit="return validateContact()">
+  <form onsubmit="sendWhatsApp(); return false;">
 
-    <input type="hidden" name="_next" value="thank-you.html">
+    <!-- TYPE SELECTION -->
+    <div class="type-select">
+      <button type="button" id="btnQuery" onclick="setType('Query')">General Query</button>
+      <button type="button" id="btnAppointment" onclick="setType('Appointment')">Book Appointment</button>
+    </div>
+
+    <input type="hidden" id="type" required>
 
     <label>
       Full Name *
-      <input type="text" name="name" required>
+      <input type="text" id="name" required>
     </label>
 
     <label>
       Phone Number
-      <input type="tel" id="phone" name="phone">
+      <input type="tel" id="phone">
     </label>
 
     <label>
       Email Address
-      <input type="email" id="email" name="email">
+      <input type="email" id="email">
     </label>
 
-    <p class="note">* Please provide at least one: phone number or email.</p>
+    <p class="note">Please provide at least a phone number or an email.</p>
 
     <fieldset>
-      <legend>Query is related to (select one or more)</legend>
+      <legend>Query is related to</legend>
 
       <div class="services-grid">
         <label><input type="checkbox" class="service" value="None"> None</label>
@@ -199,67 +243,82 @@
         <label><input type="checkbox" class="service" value="Jet Peel Facial"> Jet Peel Facial</label>
         <label><input type="checkbox" class="service" value="Hydrafacial"> Hydrafacial</label>
         <label><input type="checkbox" class="service" value="Microdermabrasion"> Microdermabrasion</label>
-        <label><input type="checkbox" class="service" value="Vampire Facial"> Vampire Facial</label>
         <label><input type="checkbox" class="service" value="Laser Treatments"> Laser Treatments</label>
         <label><input type="checkbox" class="service" value="Microneedling"> Microneedling</label>
         <label><input type="checkbox" class="service" value="Laser Hair Reduction"> Laser Hair Reduction</label>
-        <label><input type="checkbox" class="service" value="Electrolysis"> Electrolysis</label>
         <label><input type="checkbox" class="service" value="HIFU"> Skin Tightening (HIFU)</label>
-        <label><input type="checkbox" class="service" value="Skin Tag Removal"> Skin Tag Removal</label>
-        <label><input type="checkbox" class="service" value="Mole Removal"> Mole Removal</label>
-        <label><input type="checkbox" class="service" value="Dermaplaning"> Dermaplaning</label>
-        <label><input type="checkbox" class="service" value="Pigmentation Treatment"> Pigmentation Treatment</label>
-        <label><input type="checkbox" class="service" value="Dark Circle Treatment"> Dark Circle Treatment</label>
-        <label><input type="checkbox" class="service" value="Anti-Aging"> Anti-Aging Treatments</label>
         <label><input type="checkbox" class="service" value="Botox"> Botox</label>
         <label><input type="checkbox" class="service" value="Fillers"> Fillers</label>
       </div>
     </fieldset>
 
     <label>
-      Your Query / Message
-      <textarea name="message" rows="6" maxlength="1000"
-        placeholder="Please describe your concern or question..."></textarea>
+      Your Message
+      <textarea id="message" rows="6" placeholder="Please describe your concern or request..."></textarea>
     </label>
 
-    <button type="submit">Send Request</button>
+    <button type="submit" class="send-btn">Send via WhatsApp</button>
 
   </form>
 </section>
 
 <footer>
-  <p>Results may vary from person to person. Treatments are performed after consultation.</p>
+  <p>Results may vary from person to person. All treatments are performed after consultation.</p>
 </footer>
 
 <script>
   const serviceCheckboxes = document.querySelectorAll('.service');
 
-  serviceCheckboxes.forEach(cb => {
-    cb.addEventListener('change', () => {
-      const noneChecked = [...serviceCheckboxes].find(
-        c => c.value === 'None' && c.checked
-      );
-
-      serviceCheckboxes.forEach(c => {
-        if (noneChecked && c.value !== 'None') {
-          c.checked = false;
-          c.disabled = true;
-        } else {
-          c.disabled = false;
+  serviceCheckboxes.forEach(cb=>{
+    cb.addEventListener('change',()=>{
+      const noneChecked=[...serviceCheckboxes].find(c=>c.value==="None"&&c.checked);
+      serviceCheckboxes.forEach(c=>{
+        if(noneChecked && c.value!=="None"){
+          c.checked=false;
+          c.disabled=true;
+        }else{
+          c.disabled=false;
         }
       });
     });
   });
 
-  function validateContact() {
-    const phone = document.getElementById('phone').value.trim();
-    const email = document.getElementById('email').value.trim();
+  function setType(value){
+    document.getElementById('type').value=value;
+    document.getElementById('btnQuery').classList.toggle('active',value==="Query");
+    document.getElementById('btnAppointment').classList.toggle('active',value==="Appointment");
+  }
 
-    if (!phone && !email) {
-      alert('Please provide at least a phone number or an email address.');
-      return false;
+  function sendWhatsApp(){
+    const type=document.getElementById('type').value;
+    const name=document.getElementById('name').value.trim();
+    const phone=document.getElementById('phone').value.trim();
+    const email=document.getElementById('email').value.trim();
+    const msg=document.getElementById('message').value.trim();
+
+    if(!type){
+      alert("Please select Query or Appointment.");
+      return;
     }
-    return true;
+    if(!phone && !email){
+      alert("Please provide a phone number or email.");
+      return;
+    }
+
+    const services=[...document.querySelectorAll('.service:checked')].map(s=>s.value).join(', ') || 'Not specified';
+
+    const text=
+`*Type:* ${type}
+*Name:* ${name}
+*Phone:* ${phone || '—'}
+*Email:* ${email || '—'}
+*Related To:* ${services}
+
+*Message:*
+${msg || '—'}`;
+
+    const url="https://wa.me/918108108042?text="+encodeURIComponent(text);
+    window.open(url,'_blank');
   }
 </script>
 

@@ -27,7 +27,7 @@ nav a{
   color:#fff;
   margin:0 12px;
   text-decoration:none;
-  font-weight:500;
+  font-weight:600;
 }
 
 /* SECTIONS */
@@ -39,31 +39,34 @@ section{
   border-radius:14px;
   box-shadow:0 8px 20px rgba(0,0,0,0.06);
 }
-.no-bottom-margin{margin-bottom:0;}
-.no-top-margin{margin-top:0;}
+.no-top{margin-top:0;}
+.no-bottom{margin-bottom:0;}
 
 h2{margin-top:0;color:#444;}
 
-/* CLINIC DETAILS */
+/* CONTACT BOX */
 .contact-box p{margin:8px 0;font-size:15px;}
 .contact-box a{color:#c06c84;text-decoration:none;font-weight:600;}
 
-/* IMAGE */
+/* IMAGE (FIXED) */
 .hall-image{
   max-width:900px;
   margin:0 auto;
+  text-align:center;
 }
 .hall-image img{
-  width:100%;
-  height:360px;
-  object-fit:cover;
+  max-width:100%;
+  max-height:300px;
+  height:auto;
+  object-fit:contain;
   display:block;
+  margin:0 auto;
   border-radius:18px;
 }
 
 /* FORM */
 .note{font-size:14px;color:#666;margin-bottom:18px;}
-form{max-width:800px;margin:auto;}
+form{max-width:820px;margin:auto;}
 
 .type-select{
   display:flex;
@@ -105,13 +108,14 @@ legend{font-weight:600;padding:0 10px;}
 
 .services-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:12px 20px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:10px 18px;
 }
 .services-grid label{
   display:flex;
   gap:10px;
   cursor:pointer;
+  font-size:14.5px;
 }
 
 .send-btn{
@@ -161,9 +165,9 @@ document.querySelectorAll("nav a").forEach(link=>{
 </script>
 </header>
 
-<section class="contact-box no-bottom-margin">
+<section class="contact-box no-bottom">
 <h2>Clinic Details</h2>
-<p><strong>Address:</strong> Barnala Road, near Bhuman Shah Chowk, Bhagat Singh Colony, Sirsa, Haryana 125055</p>
+<p><strong>Address:</strong> Barnala Road, near Bhuman Shah Chowk, Sirsa, Haryana</p>
 <p><strong>Phone / WhatsApp:</strong> <a href="tel:+918108108042">+91 81081 08042</a></p>
 </section>
 
@@ -171,11 +175,11 @@ document.querySelectorAll("nav a").forEach(link=>{
 <img src="https://raw.githubusercontent.com/Aesthetics-SimranMalra/images/main/hall.jpeg" alt="Clinic Hall">
 </div>
 
-<section class="no-top-margin">
+<section class="no-top">
 <h2>Send Us a WhatsApp Message</h2>
 <p class="note">This form sends your message directly to our WhatsApp.</p>
 
-<form onsubmit="sendWhatsApp(); return false;">
+<form onsubmit="sendWhatsApp();return false;">
 
 <div class="type-select">
 <button type="button" id="btnQuery" onclick="setType('Query')">General Query</button>
@@ -196,22 +200,22 @@ document.querySelectorAll("nav a").forEach(link=>{
 <input type="email" id="email">
 </label>
 
-<p class="note">Please provide at least a phone number or an email.</p>
+<p class="note">Please provide at least a phone number or email.</p>
 
 <fieldset>
 <legend>OUR SERVICES</legend>
 <div class="services-grid">
 
 <label><input type="checkbox" class="service" value="Customised Medi-Facials"> Customised Medi-Facials</label>
-<label><input type="checkbox" class="service" value="Jet Peel Facial (Advanced Hydra)"> Jet Peel Facial (Advanced Hydra)</label>
+<label><input type="checkbox" class="service" value="Jet Peel Facial"> Jet Peel Facial (Advanced Hydra)</label>
 <label><input type="checkbox" class="service" value="Hydrafacial"> Hydrafacial</label>
 <label><input type="checkbox" class="service" value="Microdermabrasion"> Microdermabrasion</label>
 <label><input type="checkbox" class="service" value="Vampire Facial"> Vampire Facial</label>
 <label><input type="checkbox" class="service" value="Laser Treatments"> Laser Treatments</label>
 <label><input type="checkbox" class="service" value="Microneedling"> Microneedling</label>
-<label><input type="checkbox" class="service" value="Laser Hair Reduction (LHR)"> Laser Hair Reduction (LHR)</label>
-<label><input type="checkbox" class="service" value="Electrolysis (Laser for White Hair)"> Electrolysis (Laser for White Hair)</label>
-<label><input type="checkbox" class="service" value="Skin Tightening Treatment (HIFU)"> Skin Tightening Treatment (HIFU)</label>
+<label><input type="checkbox" class="service" value="Laser Hair Reduction"> Laser Hair Reduction (LHR)</label>
+<label><input type="checkbox" class="service" value="Electrolysis"> Electrolysis (Laser for White Hair)</label>
+<label><input type="checkbox" class="service" value="HIFU"> Skin Tightening (HIFU)</label>
 <label><input type="checkbox" class="service" value="Skin Tag Removal"> Skin Tag Removal</label>
 <label><input type="checkbox" class="service" value="Mole Removal"> Mole Removal</label>
 <label><input type="checkbox" class="service" value="Ear-Lobe Repair"> Ear-Lobe Repair</label>
@@ -221,22 +225,22 @@ document.querySelectorAll("nav a").forEach(link=>{
 <label><input type="checkbox" class="service" value="Dark Circle Treatment"> Dark Circle Treatment</label>
 <label><input type="checkbox" class="service" value="Full Body Polishing"> Full Body Polishing</label>
 <label><input type="checkbox" class="service" value="Melasma Treatment"> Melasma Treatment</label>
-<label><input type="checkbox" class="service" value="GFC (for Face)"> GFC (for Face)</label>
-<label><input type="checkbox" class="service" value="GFC (for Hair)"> GFC (for Hair)</label>
-<label><input type="checkbox" class="service" value="Xanthalasma Treatment"> Xanthalasma Treatment</label>
-<label><input type="checkbox" class="service" value="Acne Scar Treatment"> Acne Scar Treatment</label>
+<label><input type="checkbox" class="service" value="GFC Face"> GFC (for Face)</label>
+<label><input type="checkbox" class="service" value="GFC Hair"> GFC (for Hair)</label>
+<label><input type="checkbox" class="service" value="Xanthalasma"> Xanthalasma Treatment</label>
+<label><input type="checkbox" class="service" value="Acne Scar"> Acne Scar Treatment</label>
 <label><input type="checkbox" class="service" value="Anti-Aging Boosters"> Anti-Aging Boosters</label>
-<label><input type="checkbox" class="service" value="Semi Permanent Make-up"> Semi Permanent Make-up</label>
+<label><input type="checkbox" class="service" value="Semi Permanent Makeup"> Semi Permanent Make-up</label>
 <label><input type="checkbox" class="service" value="Microblading"> Microblading</label>
 <label><input type="checkbox" class="service" value="Nano Shading"> Nano Shading</label>
 <label><input type="checkbox" class="service" value="Lip Neutralisation"> Lip Neutralisation</label>
 <label><input type="checkbox" class="service" value="Lip Tint"> Lip Tint</label>
 <label><input type="checkbox" class="service" value="Eyelash Extension"> Eyelash Extension</label>
 <label><input type="checkbox" class="service" value="Eyelash Lift"> Eyelash Lift</label>
-<label><input type="checkbox" class="service" value="BB Glow Treatment"> BB Glow Treatment</label>
+<label><input type="checkbox" class="service" value="BB Glow"> BB Glow Treatment</label>
 <label><input type="checkbox" class="service" value="Botox"> Botox</label>
 <label><input type="checkbox" class="service" value="Fillers"> Fillers</label>
-<label><input type="checkbox" class="service" value="Qswitch Laser"> Qswitch Laser (Tattoo Removal, Freckles, Uneven Tone, Carbon, Open Pores)</label>
+<label><input type="checkbox" class="service" value="Qswitch Laser"> Qswitch Laser (Tattoo / Freckles / Tone / Carbon / Open Pores)</label>
 
 </div>
 </fieldset>
@@ -245,7 +249,8 @@ document.querySelectorAll("nav a").forEach(link=>{
 <textarea id="message" rows="6"></textarea>
 </label>
 
-<button type="submit" class="send-btn">Send via WhatsApp</button>
+<button class="send-btn">Send via WhatsApp</button>
+
 </form>
 </section>
 
@@ -255,27 +260,23 @@ document.querySelectorAll("nav a").forEach(link=>{
 
 <script>
 function setType(v){
-  document.getElementById('type').value=v;
-  btnQuery.classList.toggle('active',v==='Query');
-  btnAppointment.classList.toggle('active',v==='Appointment');
+  document.getElementById("type").value=v;
+  btnQuery.classList.toggle("active",v==="Query");
+  btnAppointment.classList.toggle("active",v==="Appointment");
 }
 
 function sendWhatsApp(){
-  if(!type.value){alert("Select Query or Appointment");return;}
-  if(!phone.value && !email.value){alert("Provide phone or email");return;}
+  const type=type.value;
+  const name=document.getElementById("name").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const msg=document.getElementById("message").value.trim();
+  if(!type){alert("Select Query or Appointment");return;}
+  if(!phone && !email){alert("Provide phone or email");return;}
 
-  const services=[...document.querySelectorAll('.service:checked')]
-    .map(s=>s.value).join(', ') || '—';
-
-  const text=`*Type:* ${type.value}
-*Name:* ${name.value}
-*Phone:* ${phone.value||'—'}
-*Email:* ${email.value||'—'}
-*Services:* ${services}
-
-${message.value||'—'}`;
-
-  window.open("https://wa.me/918108108042?text="+encodeURIComponent(text),'_blank');
+  const services=[...document.querySelectorAll(".service:checked")].map(s=>s.value).join(", ")||"Not specified";
+  const text=`*Type:* ${type}\n*Name:* ${name}\n*Phone:* ${phone||"—"}\n*Email:* ${email||"—"}\n*Services:* ${services}\n\n${msg||"—"}`;
+  window.open("https://wa.me/918108108042?text="+encodeURIComponent(text),"_blank");
 }
 </script>
 

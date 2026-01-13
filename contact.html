@@ -4,193 +4,307 @@
 <meta charset="UTF-8">
 <title>Contact | Aesthetics By Simran Malra</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+ 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap');
-
 body{
-  font-family:'Inter',sans-serif;
-  background:#fafafa;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:#f7f5f2;
   margin:0;
   color:#333;
-  line-height:1.6;
 }
 
-/* HEADER */
 header{
+  background:linear-gradient(135deg,#c06c84,#f67280);
+  color:#fff;
+  padding:24px 16px;
   text-align:center;
-  padding:22px;
-  background:#fff;
-  border-bottom:1px solid #eee;
-}
-header h1{
-  font-family:'Playfair Display',serif;
-  font-size:36px;
-  margin:0;
 }
 
-/* NAVIGATION */
+header h1{margin:0;font-size:32px;}
+
 nav{
-  margin-top:16px;
+  margin-top:10px;
 }
+
 nav a{
-  margin:0 14px;
+  color:#fff;
+  margin:0 12px;
   text-decoration:none;
-  font-weight:700;
-  font-size:18px;
-  color:#333;
-  display:inline-block;
-  transition:0.25s;
-}
-nav a:hover{
-  color:#c06c84;
-  transform:translateY(-4px);
+  font-weight:500;
 }
 
-/* FORMS SECTION */
-section.form-section{
-  max-width:1000px;
-  margin:40px auto;
-  padding:0 20px;
-}
-
-/* FORM CARD */
-.form-card{
+section{
+  max-width:900px;
+  margin:30px auto;
   background:#fff;
-  border-radius:16px;
-  padding:30px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.07);
-  margin-bottom:40px;
-  transition:0.3s;
-}
-.form-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 20px 45px rgba(192,108,132,0.25);
+  padding:28px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
 }
 
-.form-card h2{
-  font-family:'Playfair Display',serif;
-  font-size:28px;
-  margin-bottom:20px;
+h2{
+  margin-top:0;
+  color:#444;
+}
+
+.contact-box p{
+  margin:8px 0;
+  font-size:15px;
+}
+
+.contact-box a{
+  color:#c06c84;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.hall-image{
+  max-width:900px;
+  margin:25px auto;
   text-align:center;
+}
+
+.hall-image img{
+  transform: scale(0.6);
+  border-radius:18px;
+  background:#f4efe9;
+  padding:6px;
+}
+
+.note{
+  font-size:14px;
+  color:#666;
+  margin-bottom:18px;
+}
+
+form{
+  max-width:800px;
+  margin:auto;
+}
+
+.type-select{
+  display:flex;
+  gap:16px;
+  margin-bottom:24px;
+}
+
+.type-select button{
+  flex:1;
+  padding:16px;
+  font-size:16px;
+  border-radius:12px;
+  border:2px solid #c06c84;
+  background:#fff;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.type-select button.active{
+  background:#c06c84;
+  color:#fff;
+}
+
+label{
+  display:block;
+  margin-bottom:16px;
+  font-weight:500;
+}
+
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:15px;
+}
+
+fieldset{
+  border:1px solid #ddd;
+  padding:20px;
+  margin:24px 0;
+  border-radius:12px;
+}
+
+legend{
+  font-weight:600;
+  padding:0 10px;
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:12px 20px;
+  margin-top:14px;
+}
+
+.services-grid label{
+  display:flex;
+  gap:10px;
+  font-weight:normal;
+  cursor:pointer;
+}
+
+.services-grid input{
+  width:auto;
+  margin-top:3px;
+}
+
+.send-btn{
+  width:100%;
+  padding:16px;
+  background:linear-gradient(135deg,#25D366,#1ebe5d);
+  color:#fff;
+  border:none;
+  border-radius:14px;
+  font-size:17px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.send-btn:hover{
+  opacity:0.95;
 }
 
 footer{
   text-align:center;
-  padding:18px;
-  background:#fff;
-  border-top:1px solid #eee;
   font-size:14px;
+  color:#777;
+  padding:24px 10px;
 }
 
 @media(max-width:768px){
-  header h1{font-size:28px;}
+  header h1{font-size:26px;}
+  .type-select{flex-direction:column;}
 }
 </style>
 </head>
-
+ 
 <body>
-
+ 
 <header>
   <h1>Contact & Appointments</h1>
-
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
+    <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="contact.html">Contact</a>
   </nav>
+
+  <!-- HIDE CURRENT PAGE LINK -->
+  <script>
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll("nav a").forEach(link=>{
+      if(link.getAttribute("href") === currentPage){
+        link.style.display="none";
+      }
+    });
+  </script>
 </header>
-
-<section class="form-section">
-<div class="form-card">
+ 
+<section class="contact-box">
+  <h2>Clinic Details</h2>
+  <p><strong>Address:</strong> Barnala Road, near Bhuman Shah Chowk, Bhagat Singh Colony, Sirsa, Haryana 125055</p>
+  <p><strong>Phone / WhatsApp:</strong> <a href="tel:+918108108042">+91 81081 08042</a></p>
+</section>
+ 
+<div class="hall-image">
+  <img src="https://raw.githubusercontent.com/Aesthetics-SimranMalra/images/main/hall.jpeg" alt="Clinic Hall">
+</div>
+ 
+<section>
   <h2>Send Us a WhatsApp Message</h2>
-  <p class="note">Please provide your WhatsApp number preferably (or email).</p>
-
-  <form onsubmit="sendWhatsAppForm(event,this)">
-
-    <label>
-      Full Name *
-      <input type="text" name="name" required>
-    </label>
-
-    <label>
-      Phone Number *
-      <input type="tel" name="phone" pattern="[0-9]+" required>
-    </label>
-
-    <label>
-      Email Address
-      <input type="email" name="email">
-    </label>
-
+  <p class="note">This form sends your message directly to our WhatsApp.</p>
+ 
+  <form onsubmit="sendWhatsApp(); return false;">
+ 
+    <div class="type-select">
+      <button type="button" id="btnQuery" onclick="setType('Query')">General Query</button>
+      <button type="button" id="btnAppointment" onclick="setType('Appointment')">Book Appointment</button>
+    </div>
+ 
+    <input type="hidden" id="type" required>
+ 
+    <label>Full Name * <input type="text" id="name" required></label>
+    <label>Phone Number <input type="tel" id="phone"></label>
+    <label>Email Address <input type="email" id="email"></label>
+ 
+    <p class="note">Please provide at least a phone number or an email.</p>
+ 
     <fieldset>
-      <legend>Select Service (Choose one or more, or Others)</legend>
+      <legend>Query is related to</legend>
       <div class="services-grid">
-        <label><input type="checkbox" name="service" value="Customised Medi-Facials"><span>Customised Medi-Facials</span></label>
-        <label><input type="checkbox" name="service" value="Jet Peel Facial"><span>Jet Peel Facial (Advanced Hydra)</span></label>
-        <label><input type="checkbox" name="service" value="Hydrafacial"><span>Hydrafacial</span></label>
-        <label><input type="checkbox" name="service" value="Microdermabrasion"><span>Microdermabrasion</span></label>
-        <label><input type="checkbox" name="service" value="Vampire Facial"><span>Vampire Facial</span></label>
-        <label><input type="checkbox" name="service" value="Laser Treatments"><span>Laser Treatments</span></label>
-        <label><input type="checkbox" name="service" value="Microneedling"><span>Microneedling</span></label>
-        <label><input type="checkbox" name="service" value="Laser Hair Reduction"><span>Laser Hair Reduction (LHR)</span></label>
-        <label><input type="checkbox" name="service" value="Electrolysis"><span>Electrolysis (Laser for White Hair)</span></label>
-        <label><input type="checkbox" name="service" value="Skin Tightening"><span>Skin Tightening (HIFU)</span></label>
-        <label><input type="checkbox" name="service" value="Skin Tag Removal"><span>Skin Tag Removal</span></label>
-        <label><input type="checkbox" name="service" value="Mole Removal"><span>Mole Removal</span></label>
-        <label><input type="checkbox" name="service" value="Ear-Lobe Repair"><span>Ear-Lobe Repair</span></label>
-        <label><input type="checkbox" name="service" value="Wart Removal"><span>Wart Removal</span></label>
-        <label><input type="checkbox" name="service" value="Dermaplaning"><span>Dermaplaning</span></label>
-        <label><input type="checkbox" name="service" value="Pigmentation Treatment"><span>Pigmentation Treatment</span></label>
-        <label><input type="checkbox" name="service" value="Dark Circle Treatment"><span>Dark Circle Treatment</span></label>
-        <label><input type="checkbox" name="service" value="Full Body Polishing"><span>Full Body Polishing</span></label>
-        <label><input type="checkbox" name="service" value="Melasma Treatment"><span>Melasma Treatment</span></label>
-        <label><input type="checkbox" name="service" value="GFC Face"><span>GFC (for Face)</span></label>
-        <label><input type="checkbox" name="service" value="GFC Hair"><span>GFC (for Hair)</span></label>
-        <label><input type="checkbox" name="service" value="Xanthalasma Treatment"><span>Xanthalasma Treatment</span></label>
-        <label><input type="checkbox" name="service" value="Acne Scar Treatment"><span>Acne Scar Treatment</span></label>
-        <label><input type="checkbox" name="service" value="Anti-Aging Boosters"><span>Anti-Aging Boosters</span></label>
-        <label><input type="checkbox" name="service" value="Semi Permanent Make-up"><span>Semi Permanent Make-up</span></label>
-        <label><input type="checkbox" name="service" value="Microblading"><span>Microblading</span></label>
-        <label><input type="checkbox" name="service" value="Nano Shading"><span>Nano Shading</span></label>
-        <label><input type="checkbox" name="service" value="Lip Neutralisation"><span>Lip Neutralisation</span></label>
-        <label><input type="checkbox" name="service" value="Lip Tint"><span>Lip Tint</span></label>
-        <label><input type="checkbox" name="service" value="Eyelash Extension"><span>Eyelash Extension</span></label>
-        <label><input type="checkbox" name="service" value="Eyelash Lift"><span>Eyelash Lift</span></label>
-        <label><input type="checkbox" name="service" value="BB Glow Treatment"><span>BB Glow Treatment</span></label>
-        <label><input type="checkbox" name="service" value="Botox"><span>Botox</span></label>
-        <label><input type="checkbox" name="service" value="Fillers"><span>Fillers</span></label>
-        <label><input type="checkbox" name="service" value="Qswitch Laser"><span>Qswitch Laser (Tattoo Removal, Freckles, Uneven Tone, Carbon, Open Pores)</span></label>
-        <label><input type="checkbox" name="service" value="Others" class="others"><span>OTHERS</span></label>
+        <label><input type="checkbox" class="service" value="None"> None</label>
+        <label><input type="checkbox" class="service" value="Customised Medi-Facials"> Customised Medi-Facials</label>
+        <label><input type="checkbox" class="service" value="Jet Peel Facial"> Jet Peel Facial</label>
+        <label><input type="checkbox" class="service" value="Hydrafacial"> Hydrafacial</label>
+        <label><input type="checkbox" class="service" value="Microdermabrasion"> Microdermabrasion</label>
+        <label><input type="checkbox" class="service" value="Laser Treatments"> Laser Treatments</label>
+        <label><input type="checkbox" class="service" value="Microneedling"> Microneedling</label>
+        <label><input type="checkbox" class="service" value="Laser Hair Reduction"> Laser Hair Reduction</label>
+        <label><input type="checkbox" class="service" value="HIFU"> Skin Tightening (HIFU)</label>
+        <label><input type="checkbox" class="service" value="Botox"> Botox</label>
+        <label><input type="checkbox" class="service" value="Fillers"> Fillers</label>
       </div>
     </fieldset>
-
-    <label>
-      Your Message
-      <textarea name="message" rows="6" placeholder="Please describe your concern or request..."></textarea>
+ 
+    <label>Your Message
+      <textarea id="message" rows="6" placeholder="Please describe your concern or request..."></textarea>
     </label>
-
+ 
     <button type="submit" class="send-btn">Send via WhatsApp</button>
   </form>
-</div>
 </section>
-
+ 
 <footer>
-  <p>📞 Call / WhatsApp: +91 81081 08042</p>
+  <p>Results may vary from person to person. All treatments are performed after consultation.</p>
 </footer>
-
+ 
 <script>
-/* NAV: hide current page link (SAFE + FINAL) */
-document.addEventListener("DOMContentLoaded", () => {
-  const current = window.location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll("nav a").forEach(a => {
-    if (a.getAttribute("href") === current) {
-      a.style.display = "none";
-    }
+const serviceCheckboxes=document.querySelectorAll('.service');
+serviceCheckboxes.forEach(cb=>{
+  cb.addEventListener('change',()=>{
+    const noneChecked=[...serviceCheckboxes].find(c=>c.value==="None"&&c.checked);
+    serviceCheckboxes.forEach(c=>{
+      if(noneChecked && c.value!=="None"){
+        c.checked=false;
+        c.disabled=true;
+      }else{
+        c.disabled=false;
+      }
+    });
   });
 });
-</script>
 
+function setType(value){
+  document.getElementById('type').value=value;
+  document.getElementById('btnQuery').classList.toggle('active',value==="Query");
+  document.getElementById('btnAppointment').classList.toggle('active',value==="Appointment");
+}
+
+function sendWhatsApp(){
+  const type=document.getElementById('type').value;
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const msg=document.getElementById('message').value.trim();
+
+  if(!type){alert("Please select Query or Appointment.");return;}
+  if(!phone && !email){alert("Please provide a phone number or email.");return;}
+
+  const services=[...document.querySelectorAll('.service:checked')].map(s=>s.value).join(', ')||'Not specified';
+
+  const text=`*Type:* ${type}
+*Name:* ${name}
+*Phone:* ${phone||'—'}
+*Email:* ${email||'—'}
+*Related To:* ${services}
+
+${msg||'—'}`;
+
+  window.open("https://wa.me/918108108042?text="+encodeURIComponent(text),'_blank');
+}
+</script>
+ 
 </body>
 </html>

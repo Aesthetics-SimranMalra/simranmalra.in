@@ -21,7 +21,6 @@ header{
   text-align:center;
 }
 header h1{margin:0;font-size:32px;}
-
 nav{margin-top:10px;}
 nav a{
   color:#fff;
@@ -36,7 +35,7 @@ section{
   margin:30px auto;
   background:#fff;
   padding:28px;
-  border-radius:14px;
+  border-radius:16px;
   box-shadow:0 8px 20px rgba(0,0,0,0.06);
 }
 .no-top{margin-top:0;}
@@ -48,67 +47,78 @@ h2{margin-top:0;color:#444;}
 .contact-box p{margin:8px 0;font-size:15px;}
 .contact-box a{color:#c06c84;text-decoration:none;font-weight:600;}
 
-/* IMAGE (FIXED) */
+/* IMAGE — FULL, NO CROP, NO DISTORTION */
 .hall-image{
   max-width:900px;
-  margin:0 auto;
+  margin:20px auto;
   text-align:center;
 }
 .hall-image img{
-  max-width:100%;
-  max-height:300px;
+  width:100%;
   height:auto;
-  object-fit:contain;
   display:block;
-  margin:0 auto;
   border-radius:18px;
+  object-fit:contain;
 }
 
 /* FORM */
 .note{font-size:14px;color:#666;margin-bottom:18px;}
 form{max-width:820px;margin:auto;}
 
+/* QUERY / APPOINTMENT — 3 COLUMNS */
 .type-select{
-  display:flex;
-  gap:16px;
-  margin-bottom:24px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-bottom:26px;
 }
 .type-select button{
-  flex:1;
   padding:16px;
-  font-size:16px;
-  border-radius:12px;
+  font-size:15px;
+  border-radius:14px;
   border:2px solid #c06c84;
   background:#fff;
   cursor:pointer;
   font-weight:600;
+  transition:all 0.25s ease;
 }
+
+/* Hover effect */
+.type-select button:hover{
+  background:#f67280;
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+/* Active state */
 .type-select button.active{
   background:#c06c84;
   color:#fff;
 }
 
+/* FORM FIELDS */
 label{display:block;margin-bottom:16px;font-weight:500;}
 input,textarea{
   width:100%;
   padding:12px;
   margin-top:6px;
-  border-radius:8px;
+  border-radius:10px;
   border:1px solid #ccc;
   font-size:15px;
 }
 
+/* SERVICES */
 fieldset{
   border:1px solid #ddd;
-  padding:20px;
-  margin:24px 0;
-  border-radius:12px;
+  padding:22px;
+  margin:26px 0;
+  border-radius:14px;
 }
 legend{font-weight:600;padding:0 10px;}
 
 .services-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(3,1fr);
   gap:10px 18px;
 }
 .services-grid label{
@@ -118,18 +128,22 @@ legend{font-weight:600;padding:0 10px;}
   font-size:14.5px;
 }
 
+/* SEND BUTTON */
 .send-btn{
   width:100%;
   padding:16px;
   background:linear-gradient(135deg,#25D366,#1ebe5d);
   color:#fff;
   border:none;
-  border-radius:14px;
+  border-radius:16px;
   font-size:17px;
   font-weight:600;
   cursor:pointer;
+  transition:transform 0.2s ease;
 }
+.send-btn:hover{transform:translateY(-2px);}
 
+/* FOOTER */
 footer{
   text-align:center;
   font-size:14px;
@@ -137,9 +151,11 @@ footer{
   padding:24px 10px;
 }
 
+/* RESPONSIVE */
 @media(max-width:768px){
   header h1{font-size:26px;}
-  .type-select{flex-direction:column;}
+  .type-select{grid-template-columns:1fr;}
+  .services-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -154,15 +170,6 @@ footer{
   <a href="services.html">Services</a>
   <a href="contact.html">Contact</a>
 </nav>
-
-<script>
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
-document.querySelectorAll("nav a").forEach(link=>{
-  if(link.getAttribute("href")===currentPage){
-    link.style.display="none";
-  }
-});
-</script>
 </header>
 
 <section class="contact-box no-bottom">
@@ -184,6 +191,7 @@ document.querySelectorAll("nav a").forEach(link=>{
 <div class="type-select">
 <button type="button" id="btnQuery" onclick="setType('Query')">General Query</button>
 <button type="button" id="btnAppointment" onclick="setType('Appointment')">Book Appointment</button>
+<button type="button" onclick="setType('Consultation')">Consultation</button>
 </div>
 
 <input type="hidden" id="type">
@@ -212,30 +220,35 @@ document.querySelectorAll("nav a").forEach(link=>{
 <label><input type="checkbox" class="service" value="Microdermabrasion"> Microdermabrasion</label>
 <label><input type="checkbox" class="service" value="Vampire Facial"> Vampire Facial</label>
 <label><input type="checkbox" class="service" value="Laser Treatments"> Laser Treatments</label>
+
 <label><input type="checkbox" class="service" value="Microneedling"> Microneedling</label>
 <label><input type="checkbox" class="service" value="Laser Hair Reduction"> Laser Hair Reduction (LHR)</label>
 <label><input type="checkbox" class="service" value="Electrolysis"> Electrolysis (Laser for White Hair)</label>
 <label><input type="checkbox" class="service" value="HIFU"> Skin Tightening (HIFU)</label>
 <label><input type="checkbox" class="service" value="Skin Tag Removal"> Skin Tag Removal</label>
 <label><input type="checkbox" class="service" value="Mole Removal"> Mole Removal</label>
+
 <label><input type="checkbox" class="service" value="Ear-Lobe Repair"> Ear-Lobe Repair</label>
 <label><input type="checkbox" class="service" value="Wart Removal"> Wart Removal</label>
 <label><input type="checkbox" class="service" value="Dermaplaning"> Dermaplaning</label>
 <label><input type="checkbox" class="service" value="Pigmentation Treatment"> Pigmentation Treatment</label>
 <label><input type="checkbox" class="service" value="Dark Circle Treatment"> Dark Circle Treatment</label>
 <label><input type="checkbox" class="service" value="Full Body Polishing"> Full Body Polishing</label>
+
 <label><input type="checkbox" class="service" value="Melasma Treatment"> Melasma Treatment</label>
 <label><input type="checkbox" class="service" value="GFC Face"> GFC (for Face)</label>
 <label><input type="checkbox" class="service" value="GFC Hair"> GFC (for Hair)</label>
 <label><input type="checkbox" class="service" value="Xanthalasma"> Xanthalasma Treatment</label>
 <label><input type="checkbox" class="service" value="Acne Scar"> Acne Scar Treatment</label>
 <label><input type="checkbox" class="service" value="Anti-Aging Boosters"> Anti-Aging Boosters</label>
+
 <label><input type="checkbox" class="service" value="Semi Permanent Makeup"> Semi Permanent Make-up</label>
 <label><input type="checkbox" class="service" value="Microblading"> Microblading</label>
 <label><input type="checkbox" class="service" value="Nano Shading"> Nano Shading</label>
 <label><input type="checkbox" class="service" value="Lip Neutralisation"> Lip Neutralisation</label>
 <label><input type="checkbox" class="service" value="Lip Tint"> Lip Tint</label>
 <label><input type="checkbox" class="service" value="Eyelash Extension"> Eyelash Extension</label>
+
 <label><input type="checkbox" class="service" value="Eyelash Lift"> Eyelash Lift</label>
 <label><input type="checkbox" class="service" value="BB Glow"> BB Glow Treatment</label>
 <label><input type="checkbox" class="service" value="Botox"> Botox</label>
@@ -250,7 +263,6 @@ document.querySelectorAll("nav a").forEach(link=>{
 </label>
 
 <button class="send-btn">Send via WhatsApp</button>
-
 </form>
 </section>
 
@@ -261,17 +273,17 @@ document.querySelectorAll("nav a").forEach(link=>{
 <script>
 function setType(v){
   document.getElementById("type").value=v;
-  btnQuery.classList.toggle("active",v==="Query");
-  btnAppointment.classList.toggle("active",v==="Appointment");
+  document.querySelectorAll(".type-select button").forEach(b=>b.classList.remove("active"));
+  event.target.classList.add("active");
 }
 
 function sendWhatsApp(){
-  const type=type.value;
+  const type=document.getElementById("type").value;
   const name=document.getElementById("name").value.trim();
   const phone=document.getElementById("phone").value.trim();
   const email=document.getElementById("email").value.trim();
   const msg=document.getElementById("message").value.trim();
-  if(!type){alert("Select Query or Appointment");return;}
+  if(!type){alert("Select Query / Appointment");return;}
   if(!phone && !email){alert("Provide phone or email");return;}
 
   const services=[...document.querySelectorAll(".service:checked")].map(s=>s.value).join(", ")||"Not specified";

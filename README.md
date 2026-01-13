@@ -2,6 +2,7 @@
 
 Official website repository for **Aesthetics By Simran Malra**, a skin, laser and aesthetic clinic based in **Sirsa, Haryana (India)**.
 
+Website:  simranmalra.online
 ---
 
 ## About the Clinic

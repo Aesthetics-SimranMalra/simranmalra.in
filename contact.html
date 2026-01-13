@@ -7,25 +7,22 @@
 
 <style>
 body{
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family:"Segoe UI", Arial, sans-serif;
   background:#f7f5f2;
   margin:0;
   color:#333;
 }
 
+/* HEADER */
 header{
   background:linear-gradient(135deg,#c06c84,#f67280);
   color:#fff;
   padding:24px 16px;
   text-align:center;
 }
-
 header h1{margin:0;font-size:32px;}
 
-nav{
-  margin-top:10px;
-}
-
+nav{margin-top:10px;}
 nav a{
   color:#fff;
   margin:0 12px;
@@ -33,10 +30,7 @@ nav a{
   font-weight:500;
 }
 
-nav a:hover{
-  text-decoration:underline;
-}
-
+/* SECTIONS */
 section{
   max-width:900px;
   margin:30px auto;
@@ -45,55 +39,37 @@ section{
   border-radius:14px;
   box-shadow:0 8px 20px rgba(0,0,0,0.06);
 }
+.no-bottom-margin{margin-bottom:0;}
+.no-top-margin{margin-top:0;}
 
-h2{
-  margin-top:0;
-  color:#444;
-}
+h2{margin-top:0;color:#444;}
 
-.contact-box p{
-  margin:8px 0;
-  font-size:15px;
-}
+/* CLINIC DETAILS */
+.contact-box p{margin:8px 0;font-size:15px;}
+.contact-box a{color:#c06c84;text-decoration:none;font-weight:600;}
 
-.contact-box a{
-  color:#c06c84;
-  text-decoration:none;
-  font-weight:600;
-}
-
+/* IMAGE */
 .hall-image{
   max-width:900px;
-  text-align:center;
-  margin:0; /* removed extra space */
+  margin:0 auto;
 }
-
 .hall-image img{
   width:100%;
-  height:400px; /* reduced height */
-  object-fit:cover; /* maintain aspect ratio */
+  height:360px;
+  object-fit:cover;
+  display:block;
   border-radius:18px;
-  background:#f4efe9;
-  padding:6px;
 }
 
-.note{
-  font-size:14px;
-  color:#666;
-  margin-bottom:18px;
-}
-
-form{
-  max-width:800px;
-  margin:auto;
-}
+/* FORM */
+.note{font-size:14px;color:#666;margin-bottom:18px;}
+form{max-width:800px;margin:auto;}
 
 .type-select{
   display:flex;
   gap:16px;
   margin-bottom:24px;
 }
-
 .type-select button{
   flex:1;
   padding:16px;
@@ -104,18 +80,12 @@ form{
   cursor:pointer;
   font-weight:600;
 }
-
 .type-select button.active{
   background:#c06c84;
   color:#fff;
 }
 
-label{
-  display:block;
-  margin-bottom:16px;
-  font-weight:500;
-}
-
+label{display:block;margin-bottom:16px;font-weight:500;}
 input,textarea{
   width:100%;
   padding:12px;
@@ -131,29 +101,17 @@ fieldset{
   margin:24px 0;
   border-radius:12px;
 }
-
-legend{
-  font-weight:600;
-  padding:0 10px;
-}
+legend{font-weight:600;padding:0 10px;}
 
 .services-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:12px 20px;
-  margin-top:14px;
 }
-
 .services-grid label{
   display:flex;
   gap:10px;
-  font-weight:normal;
   cursor:pointer;
-}
-
-.services-grid input{
-  width:auto;
-  margin-top:3px;
 }
 
 .send-btn{
@@ -166,10 +124,6 @@ legend{
   font-size:17px;
   font-weight:600;
   cursor:pointer;
-}
-
-.send-btn:hover{
-  opacity:0.95;
 }
 
 footer{
@@ -196,16 +150,18 @@ footer{
   <a href="services.html">Services</a>
   <a href="contact.html">Contact</a>
 </nav>
+
 <script>
-  // hide current page link
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  document.querySelectorAll("nav a").forEach(link=>{
-    if(link.getAttribute("href") === currentPage) link.style.display="none";
-  });
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+document.querySelectorAll("nav a").forEach(link=>{
+  if(link.getAttribute("href")===currentPage){
+    link.style.display="none";
+  }
+});
 </script>
 </header>
 
-<section class="contact-box">
+<section class="contact-box no-bottom-margin">
 <h2>Clinic Details</h2>
 <p><strong>Address:</strong> Barnala Road, near Bhuman Shah Chowk, Bhagat Singh Colony, Sirsa, Haryana 125055</p>
 <p><strong>Phone / WhatsApp:</strong> <a href="tel:+918108108042">+91 81081 08042</a></p>
@@ -215,45 +171,81 @@ footer{
 <img src="https://raw.githubusercontent.com/Aesthetics-SimranMalra/images/main/hall.jpeg" alt="Clinic Hall">
 </div>
 
-<section>
+<section class="no-top-margin">
 <h2>Send Us a WhatsApp Message</h2>
 <p class="note">This form sends your message directly to our WhatsApp.</p>
 
 <form onsubmit="sendWhatsApp(); return false;">
 
-  <div class="type-select">
-    <button type="button" id="btnQuery" onclick="setType('Query')">General Query</button>
-    <button type="button" id="btnAppointment" onclick="setType('Appointment')">Book Appointment</button>
-  </div>
+<div class="type-select">
+<button type="button" id="btnQuery" onclick="setType('Query')">General Query</button>
+<button type="button" id="btnAppointment" onclick="setType('Appointment')">Book Appointment</button>
+</div>
 
-  <input type="hidden" id="type" required>
+<input type="hidden" id="type">
 
-  <label>Full Name *<input type="text" id="name" required></label>
-  <label>Phone Number<input type="tel" id="phone"></label>
-  <label>Email Address<input type="email" id="email"></label>
-  <p class="note">Please provide at least a phone number or an email.</p>
+<label>Full Name *
+<input type="text" id="name" required>
+</label>
 
-  <fieldset>
-    <legend>Query is related to</legend>
-    <div class="services-grid">
-      <label><input type="checkbox" class="service" value="None"> None</label>
-      <label><input type="checkbox" class="service" value="Customised Medi-Facials"> Customised Medi-Facials</label>
-      <label><input type="checkbox" class="service" value="Jet Peel Facial"> Jet Peel Facial</label>
-      <label><input type="checkbox" class="service" value="Hydrafacial"> Hydrafacial</label>
-      <label><input type="checkbox" class="service" value="Microdermabrasion"> Microdermabrasion</label>
-      <label><input type="checkbox" class="service" value="Laser Treatments"> Laser Treatments</label>
-      <label><input type="checkbox" class="service" value="Microneedling"> Microneedling</label>
-      <label><input type="checkbox" class="service" value="Laser Hair Reduction"> Laser Hair Reduction</label>
-      <label><input type="checkbox" class="service" value="HIFU"> Skin Tightening (HIFU)</label>
-      <label><input type="checkbox" class="service" value="Botox"> Botox</label>
-      <label><input type="checkbox" class="service" value="Fillers"> Fillers</label>
-    </div>
-  </fieldset>
+<label>Phone Number
+<input type="tel" id="phone">
+</label>
 
-  <label>Your Message<textarea id="message" rows="6" placeholder="Please describe your concern or request..."></textarea></label>
+<label>Email Address
+<input type="email" id="email">
+</label>
 
-  <button type="submit" class="send-btn">Send via WhatsApp</button>
+<p class="note">Please provide at least a phone number or an email.</p>
 
+<fieldset>
+<legend>OUR SERVICES</legend>
+<div class="services-grid">
+
+<label><input type="checkbox" class="service" value="Customised Medi-Facials"> Customised Medi-Facials</label>
+<label><input type="checkbox" class="service" value="Jet Peel Facial (Advanced Hydra)"> Jet Peel Facial (Advanced Hydra)</label>
+<label><input type="checkbox" class="service" value="Hydrafacial"> Hydrafacial</label>
+<label><input type="checkbox" class="service" value="Microdermabrasion"> Microdermabrasion</label>
+<label><input type="checkbox" class="service" value="Vampire Facial"> Vampire Facial</label>
+<label><input type="checkbox" class="service" value="Laser Treatments"> Laser Treatments</label>
+<label><input type="checkbox" class="service" value="Microneedling"> Microneedling</label>
+<label><input type="checkbox" class="service" value="Laser Hair Reduction (LHR)"> Laser Hair Reduction (LHR)</label>
+<label><input type="checkbox" class="service" value="Electrolysis (Laser for White Hair)"> Electrolysis (Laser for White Hair)</label>
+<label><input type="checkbox" class="service" value="Skin Tightening Treatment (HIFU)"> Skin Tightening Treatment (HIFU)</label>
+<label><input type="checkbox" class="service" value="Skin Tag Removal"> Skin Tag Removal</label>
+<label><input type="checkbox" class="service" value="Mole Removal"> Mole Removal</label>
+<label><input type="checkbox" class="service" value="Ear-Lobe Repair"> Ear-Lobe Repair</label>
+<label><input type="checkbox" class="service" value="Wart Removal"> Wart Removal</label>
+<label><input type="checkbox" class="service" value="Dermaplaning"> Dermaplaning</label>
+<label><input type="checkbox" class="service" value="Pigmentation Treatment"> Pigmentation Treatment</label>
+<label><input type="checkbox" class="service" value="Dark Circle Treatment"> Dark Circle Treatment</label>
+<label><input type="checkbox" class="service" value="Full Body Polishing"> Full Body Polishing</label>
+<label><input type="checkbox" class="service" value="Melasma Treatment"> Melasma Treatment</label>
+<label><input type="checkbox" class="service" value="GFC (for Face)"> GFC (for Face)</label>
+<label><input type="checkbox" class="service" value="GFC (for Hair)"> GFC (for Hair)</label>
+<label><input type="checkbox" class="service" value="Xanthalasma Treatment"> Xanthalasma Treatment</label>
+<label><input type="checkbox" class="service" value="Acne Scar Treatment"> Acne Scar Treatment</label>
+<label><input type="checkbox" class="service" value="Anti-Aging Boosters"> Anti-Aging Boosters</label>
+<label><input type="checkbox" class="service" value="Semi Permanent Make-up"> Semi Permanent Make-up</label>
+<label><input type="checkbox" class="service" value="Microblading"> Microblading</label>
+<label><input type="checkbox" class="service" value="Nano Shading"> Nano Shading</label>
+<label><input type="checkbox" class="service" value="Lip Neutralisation"> Lip Neutralisation</label>
+<label><input type="checkbox" class="service" value="Lip Tint"> Lip Tint</label>
+<label><input type="checkbox" class="service" value="Eyelash Extension"> Eyelash Extension</label>
+<label><input type="checkbox" class="service" value="Eyelash Lift"> Eyelash Lift</label>
+<label><input type="checkbox" class="service" value="BB Glow Treatment"> BB Glow Treatment</label>
+<label><input type="checkbox" class="service" value="Botox"> Botox</label>
+<label><input type="checkbox" class="service" value="Fillers"> Fillers</label>
+<label><input type="checkbox" class="service" value="Qswitch Laser"> Qswitch Laser (Tattoo Removal, Freckles, Uneven Tone, Carbon, Open Pores)</label>
+
+</div>
+</fieldset>
+
+<label>Your Message
+<textarea id="message" rows="6"></textarea>
+</label>
+
+<button type="submit" class="send-btn">Send via WhatsApp</button>
 </form>
 </section>
 
@@ -262,56 +254,28 @@ footer{
 </footer>
 
 <script>
-const serviceCheckboxes=document.querySelectorAll('.service');
-serviceCheckboxes.forEach(cb=>{
-  cb.addEventListener('change',()=>{
-    const noneChecked=[...serviceCheckboxes].find(c=>c.value==="None"&&c.checked);
-    serviceCheckboxes.forEach(c=>{
-      if(noneChecked && c.value!=="None"){
-        c.checked=false;
-        c.disabled=true;
-      }else{
-        c.disabled=false;
-      }
-    });
-  });
-});
-
-function setType(value){
-  document.getElementById('type').value=value;
-  document.getElementById('btnQuery').classList.toggle('active',value==="Query");
-  document.getElementById('btnAppointment').classList.toggle('active',value==="Appointment");
+function setType(v){
+  document.getElementById('type').value=v;
+  btnQuery.classList.toggle('active',v==='Query');
+  btnAppointment.classList.toggle('active',v==='Appointment');
 }
 
 function sendWhatsApp(){
-  const type=document.getElementById('type').value;
-  const name=document.getElementById('name').value.trim();
-  const phone=document.getElementById('phone').value.trim();
-  const email=document.getElementById('email').value.trim();
-  const msg=document.getElementById('message').value.trim();
+  if(!type.value){alert("Select Query or Appointment");return;}
+  if(!phone.value && !email.value){alert("Provide phone or email");return;}
 
-  if(!type){
-    alert("Please select Query or Appointment.");
-    return;
-  }
-  if(!phone && !email){
-    alert("Please provide a phone number or email.");
-    return;
-  }
+  const services=[...document.querySelectorAll('.service:checked')]
+    .map(s=>s.value).join(', ') || '—';
 
-  const services=[...document.querySelectorAll('.service:checked')].map(s=>s.value).join(', ') || 'Not specified';
+  const text=`*Type:* ${type.value}
+*Name:* ${name.value}
+*Phone:* ${phone.value||'—'}
+*Email:* ${email.value||'—'}
+*Services:* ${services}
 
-  const text=
-`*Type:* ${type}
-*Name:* ${name}
-*Phone:* ${phone || '—'}
-*Email:* ${email || '—'}
-*Related To:* ${services}
+${message.value||'—'}`;
 
-${msg || '—'}`;
-
-  const url="https://wa.me/918108108042?text="+encodeURIComponent(text);
-  window.open(url,'_blank');
+  window.open("https://wa.me/918108108042?text="+encodeURIComponent(text),'_blank');
 }
 </script>
 

@@ -46,7 +46,8 @@ header h1{
   color:var(--muted);
   font-style:italic;
   margin-top:6px;
-  font-size:18px;
+  font-size:24px;      /* bigger tagline */
+  font-weight:600;
 }
 nav{
   margin-top:20px;
@@ -55,13 +56,14 @@ nav a{
   text-decoration:none;
   color:var(--dark);
   margin-right:25px;
-  font-weight:500;
-  font-size:16px;
-  transition:0.3s;
+  font-weight:700;       /* bold */
+  font-size:20px;        /* bigger */
+  transition:0.3s, transform 0.2s;
+  display:inline-block;  /* needed for transform on hover */
 }
 nav a:hover{
   color:var(--primary);
-  letter-spacing:1px;
+  transform:translateY(-4px);  /* shifts upward */
 }
 
 /* HERO */
@@ -207,6 +209,9 @@ footer a:hover{
 @media(max-width:768px){
   header h1{
     font-size:34px;
+  }
+  .tagline{
+    font-size:20px;
   }
   .hero h2{
     font-size:32px;

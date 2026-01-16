@@ -305,6 +305,41 @@ ${msg||"—"}`;
 
   window.open("https://wa.me/918108108042?text="+encodeURIComponent(text),"_blank");
 }
+
+/* === AUTO-SELECT SERVICE & BOOK APPOINTMENT FROM URL === */
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const serviceFromURL = params.get("service");
+
+  if(!serviceFromURL) return;
+
+  /* 1. Auto-select "Book Appointment" */
+  const buttons = document.querySelectorAll(".type-select button");
+  buttons.forEach(btn=>{
+    if(btn.textContent.trim() === "Book Appointment"){
+      setType(btn, "Appointment");
+    }
+  });
+
+  /* 2. Auto-select matching service */
+  document.querySelectorAll(".service-item").forEach(item=>{
+    const input = item.querySelector("input");
+    if(input && input.value.toLowerCase() === serviceFromURL.toLowerCase()){
+      input.checked = true;
+      item.classList.add("selected");
+
+      /* remove NONE / General Question */
+      if(!item.hasAttribute("data-none")){
+        const none = document.querySelector("[data-none]");
+        none.classList.remove("selected");
+        none.querySelector("input").checked = false;
+      }
+    }
+  });
+})();
+
+
+  
 </script>
 
 </body>

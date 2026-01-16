@@ -218,7 +218,9 @@ footer a{color:var(--primary);}
     <a class="btn" href="contact.html">Book Appointment</a>
 
     <div class="new-services-area">
-      <div class="new-services-title">✨ Q-Switch Laser Treatments</div>
+    <div class="new-services-title">
+      <span class="new-badge">NEW!</span> ✨ Q-Switch Laser Treatments
+    </div>
       <div class="new-services-cloud">
         <a href="contact.html?service=Tattoo%20Removal" class="service-chip">Tattoo Removal</a>
         <a href="contact.html?service=Freckles" class="service-chip">Freckles</a>
@@ -281,6 +283,24 @@ footer a{color:var(--primary);}
   color:#a85b6f;               /* complementary accent color */
   font-weight:600;
 }
+
+.new-badge {
+  display: inline-block;
+  background: #ff4757;       /* bright red for attention */
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-right: 8px;
+  animation: blink 1s infinite; /* blinking animation */
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
 </style>
 
 
